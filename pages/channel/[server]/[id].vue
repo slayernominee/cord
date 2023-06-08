@@ -10,6 +10,8 @@
                 <div class="h-full overflow-hidden">
                     <ServerInfo />
                     <ChannelList />
+                    <UserInfo />
+
                 </div>
                 
                 <!-- messages -->
