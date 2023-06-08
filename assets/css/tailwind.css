@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-slate-900 text-slate-100;
+}
 
 @layer components {
-    
+    nav {
+        @apply bg-slate-700 text-white h-12;
+    }
+    nav ul {
+        @apply h-full flex mx-8; 
+    }
+    .tab {
+        @apply px-5 py-2.5 text-slate-300 select-none cursor-pointer w-40 mx-8 text-center text-lg;
+        @apply hover:text-slate-400;
+    }
+    .servericon {
+        @apply text-center w-full flex justify-center py-3 cursor-pointer;
+    }
+    .channel {
+        @apply bg-black py-2 pl-4 cursor-pointer bg-opacity-100;
+        @apply hover:bg-opacity-90 hover:bg-slate-800;
+    }
 }
