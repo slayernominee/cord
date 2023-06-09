@@ -2,7 +2,6 @@
     <div>
         <div class="flex w-full h-screen">
             
-            <!-- server list -->
             <ServerList :guilds="guilds" />
             
             <!-- content -->
@@ -15,22 +14,20 @@
                 </div>
                 
                 <div class="w-full">
-                    <!-- search bar & co -->
-
-                    
                     <div class="w-full bg-black bg-opacity-25 h-[92.2vh]">
                         <!-- search bar & co -->
-                        {{ server_id }}
-                        <!-- messages -->
+                        <div class="w-full bg-transparent h-12">
+
+                        </div>
+
+                        <Messages />
                     </div>
                     
-                    <!-- send message -->
                     <MessageBox channelname="info" :channel_id="channel_id" />
                 </div>
                 
             </div>
             
-            <!-- member liat -->
             <MemberList /> 
             
             
