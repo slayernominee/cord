@@ -1,20 +1,16 @@
-# Nuxt 3 Minimal Starter
+# Cord 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+An Discord like Front End for Bots (basically a bot client)
+
+TODO: Add Images ...
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
 # npm
 npm install
-
-# pnpm
-pnpm install
 ```
 
 ## Development Server
