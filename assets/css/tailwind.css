@@ -40,7 +40,7 @@ body {
         @apply rounded-full h-10 mr-4;
     }
     .message {
-        @apply bg-slate-200 bg-opacity-20 rounded-lg px-5 py-3;
+        @apply bg-slate-200 bg-opacity-20 rounded-lg px-5 py-3 my-3;
     }
 
 }
