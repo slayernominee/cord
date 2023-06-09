@@ -2,7 +2,7 @@
     <div class="px-10 pt-4 overflow-y-scroll h-[85vh]">
         <div v-for="message in messages.reverse()" class="message">
             <div class="flex">
-                <img class="messageAvatar" :src="`https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240`">
+                <img class="messageAvatar" :src="`https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp?size=240`">
                 <div class="flex">
                     <p class="mr-4 text-blue-500">{{ message.author.username }}</p>
                     <span class="text-xs pt-1 text-slate-500 text-opacity-80">Today at 3:23 PM</span>
