@@ -14,7 +14,7 @@ function sortByKey(array, key) {
 export default defineEventHandler(async (event) => {
     const { guild_id } = await readBody(event)
 
-    const roles = sortByKey(await rest.get(Routes.guildRoles(guild_id), { query: "limit=50"}), 'position')
+    const roles = sortByKey(await rest.get(Routes.guildRoles(guild_id)), 'position')
 
     return {
         roles: roles
