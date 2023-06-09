@@ -2,7 +2,7 @@
     <div class="flex w-full h-screen">
         
         <!-- server list -->
-        <ServerList />
+        <ServerList :guilds="guilds" />
         
         <!-- content -->
         <div class="w-full h-[100vh]">
@@ -31,7 +31,9 @@
 </template>
 
 <script setup lang="ts">
+var user: any = await $fetch('/api/me')
 
+var { guilds }: any = await $fetch('/api/server')
 </script>
 
 <style scoped>
