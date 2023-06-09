@@ -26,9 +26,7 @@
             </div>
             
             <!-- member liat -->
-            <div>
-                
-            </div>
+            <MemberList /> 
             
             
         </div>

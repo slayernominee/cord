@@ -20,8 +20,15 @@ body {
     .servericon {
         @apply text-center w-full flex justify-center py-3 cursor-pointer;
     }
-    .channel {
+    .channel, .memberListRoleName, .memberListMember {
         @apply bg-black py-2 pl-4 cursor-pointer bg-opacity-100;
         @apply hover:bg-opacity-90 hover:bg-slate-800;
     }
+    .memberListMember {
+        @apply pl-7 flex;
+    }
+    .memberListMemberAvatar {
+        @apply rounded-full h-8 mr-4;
+    }
+
 }
