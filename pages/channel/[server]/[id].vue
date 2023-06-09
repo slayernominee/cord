@@ -6,23 +6,27 @@
             <ServerList />
             
             <!-- content -->
-            <div class="w-full h-[100vh]">
+            <div class="w-full h-[100vh] flex">
                 <div class="h-full overflow-hidden">
                     <ServerInfo name="My Server" />
                     <ChannelList />
                     <UserInfo username="raphiel" status="sleepy" />
+                    
+                </div>
+                
+                <div class="w-full">
+                    <!-- search bar & co -->
 
+                    
+                    <div class="w-full bg-red-300 h-[92.2vh]">
+                        <!-- search bar & co -->
+                        <!-- messages -->
+                    </div>
+                    
+                    <!-- send message -->
+                    <MessageBox channelname="info" />
                 </div>
                 
-                <!-- messages -->
-                <div>
-                    
-                </div>
-                
-                <!-- send message -->
-                <div>
-                    
-                </div>
             </div>
             
             <!-- member liat -->
