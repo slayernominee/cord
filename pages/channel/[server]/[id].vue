@@ -62,47 +62,7 @@ const messageSend = async (message: string) => {
     message_key.value++
 }
 
-const old_members = [
-{
-    "name": "Admin",
-    "members": [
-    {
-        "name": "raphiel",
-        "avatar": "https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240",
-        "owner": true
-    },
-    {
-        "name": "slayernominee",
-        "avatar": "https://picsum.photos/240",
-        "owner": false
-    }
-    ]
-},
-{
-    "name": "Online",
-    "members": [
-    {
-        "name": "mee5",
-        "avatar": "29271f9348f821ad2edd0a582523174b",
-        "id": "1115345432479019100",
-        "owner": false
-    },
-    {
-        "name": "another user",
-        "avatar": "https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240",
-        "owner": false
-    },
-    {
-        "name": "another user",
-        "avatar": "https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240",
-        "owner": false
-    }
-    ]
-}
-]
-
-
-const { members } :any = await $fetch('/api/membersByRoles', { method: 'POST', body: { guild_id: server_id } })
+const members: any = []
 
 </script>
 
