@@ -4,13 +4,13 @@
             <div class="mt-1">
                 <i class="mdi mdi-plus-circle mr-4 text-2xl cursor-pointer"></i>
             </div>
-            <input 
-            class="bg-transparent text-white border-none outline-none pt-0 w-[90%]" 
+            <textarea 
+            class="bg-transparent text-white border-none outline-none pt-0 w-[90%] mt-2 resize-none" 
             type="text"
             v-model="message"
-            @keypress="sendMessage"
+            @keydown="sendMessage"
             :placeholder="'Message #' + channelname "
-            >
+            />
             
             <div class="mt-1">
                 <i class="mdi mdi-file-gif-box ml-4 text-2xl cursor-pointer"></i>
@@ -30,18 +30,20 @@ var message = ref('')
 const emit = defineEmits(['messageSend'])
 
 const sendMessage = async (event: any) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && message.value !== '' && event.shiftKey === false) {
+        event.preventDefault()
+        let to_send_message = message.value
+        message.value = ''
         let { status } = await $fetch('/api/send', {
             method: 'POST',
             body: {
-                message: message.value,
+                message: to_send_message,
                 channel_id: channel_id
             }
         })
 
         if (status === 200) {
-            emit('messageSend', message.value)
-            message.value = ''
+            emit('messageSend', to_send_message)
         } else {
             alert('an error occured, the message probably wasnt sent ...')
         }
