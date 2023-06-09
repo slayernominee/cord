@@ -2,7 +2,7 @@
 
 An Discord like Front End for Bots (basically a bot client)
 
-TODO: Add Images ...
+![Image](.github/showcase.png)
 
 ## Setup
 
