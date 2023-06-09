@@ -8,9 +8,9 @@
             <!-- content -->
             <div class="w-full h-[100vh]">
                 <div class="h-full overflow-hidden">
-                    <ServerInfo />
+                    <ServerInfo name="My Server" />
                     <ChannelList />
-                    <UserInfo />
+                    <UserInfo username="raphiel" status="sleepy" />
 
                 </div>
                 
