@@ -20,7 +20,7 @@
 
                         </div>
 
-                        <Messages />
+                        <Messages v-if="channel_id !== 'undefined'" :channel_id="channel_id" />
                     </div>
                     
                     <MessageBox channelname="info" :channel_id="channel_id" />
