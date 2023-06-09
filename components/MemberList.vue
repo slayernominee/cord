@@ -7,8 +7,8 @@
             </div>
 
             <div class="memberListMember" v-for="member in role.members">
-                <img class="memberListMemberAvatar" :src="`https://cdn.discordapp.com/avatars/${member.id}/${member.avatar}.webp?size=160`">
-                <p>{{ member.name }}</p>
+                <img class="memberListMemberAvatar" :src="`https://cdn.discordapp.com/avatars/${member.user.id}/${member.user.avatar}.webp?size=160`">
+                <p>{{ member.user.username }}</p>
                 <i v-if="member.owner" class="mdi mdi-crown text-yellow-400 ml-2"></i>
             </div>
         </div>
