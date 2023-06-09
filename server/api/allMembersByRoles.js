@@ -2,7 +2,6 @@ export default defineEventHandler(async (event) => {
     const { guild_id } = await readBody(event)
     const { roles } = await $fetch('/api/roles', { method: 'POST', body: { guild_id: guild_id } })
 
-
     const { members } = await $fetch('/api/members', { method: 'POST', body: { guild_id: guild_id } })
 
     // TODO: option to give the roles and the users -> less requests 

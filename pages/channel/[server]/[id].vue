@@ -62,7 +62,9 @@ const messageSend = async (message: string) => {
     message_key.value++
 }
 
-const members: any = []
+const { members }: any = await $fetch('/api/allMembersByRoles', { method: 'POST', body: { guild_id: server_id } })
+
+console.log(members)
 
 </script>
 
