@@ -25,7 +25,7 @@
                     </div>
                     
                     <!-- send message -->
-                    <MessageBox channelname="info" />
+                    <MessageBox channelname="info" :channel_id="channel_id" />
                 </div>
                 
             </div>
@@ -39,7 +39,10 @@
 </template>
 
 <script setup lang="ts">
-const server_id = useRoute().params.server;
+const route = useRoute()
+
+const server_id = route.params.server;
+const channel_id = route.params.id;
 
 var user: any = await $fetch('/api/me')
 

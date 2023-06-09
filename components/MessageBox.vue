@@ -7,6 +7,8 @@
             <input 
             class="bg-transparent text-white border-none outline-none pt-0 w-[90%]" 
             type="text"
+            v-model="message"
+            @keypress="sendMessage"
             :placeholder="'Message #' + channelname "
             >
             
@@ -18,7 +20,27 @@
 </template>
 
 <script setup lang="ts">
-const { channelname } = defineProps(['channelname'])
+const { channelname, channel_id } = defineProps(['channelname', 'channel_id'])
+
+var message = ref('')
+
+const sendMessage = async (event: any) => {
+    if (event.key === 'Enter') {
+        let { status } = await $fetch('/api/send', {
+            method: 'POST',
+            body: {
+                message: message.value,
+                channel_id: channel_id
+            }
+        })
+
+        if (status === 200) {
+            message.value = ''
+        } else {
+            alert('an error occured, the message probably wasnt sent ...')
+        }
+    }
+}
 </script>
 
 <style scoped>
