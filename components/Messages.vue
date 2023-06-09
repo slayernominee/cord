@@ -1,6 +1,7 @@
 <template>
-    <div class="px-10 pt-4 overflow-y-scroll h-[85vh]" id="messageList">
-        <div v-for="message in messages.reverse()" class="message">
+    <div class="px-10 pt-4 overflow-y-scroll h-[85vh]" style="display: flex;
+  flex-direction: column-reverse;" id="messageList">
+        <div v-for="message in messages" class="message">
             <div class="flex">
                 <img class="messageAvatar" :src="`https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp?size=240`">
                 <div class="flex">
@@ -17,9 +18,8 @@
 </template>
 
 <script setup lang="ts">
-const { channel_id } = defineProps(['channel_id'])
-
-const { messages } :any = await $fetch('/api/messages', { method: 'POST', body: { channel_id: channel_id } })
+const { messages, channel_id } = defineProps(['messages', 'channel_id'])
+//const { messages } :any = await $fetch('/api/messages', { method: 'POST', body: { channel_id: channel_id } })
 </script>
 
 <style scoped>

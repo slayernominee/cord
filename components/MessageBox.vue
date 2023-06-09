@@ -20,9 +20,14 @@
 </template>
 
 <script setup lang="ts">
+import { emit } from 'process';
+import { useContext } from 'unctx/index';
+
 const { channelname, channel_id } = defineProps(['channelname', 'channel_id'])
 
 var message = ref('')
+
+const emit = defineEmits(['messageSend'])
 
 const sendMessage = async (event: any) => {
     if (event.key === 'Enter') {
@@ -35,6 +40,7 @@ const sendMessage = async (event: any) => {
         })
 
         if (status === 200) {
+            emit('messageSend', message.value)
             message.value = ''
         } else {
             alert('an error occured, the message probably wasnt sent ...')
