@@ -17,9 +17,9 @@
                     <div class="w-full bg-black bg-opacity-25 h-[92.2vh]">
                         <!-- search bar & co -->
                         <div class="w-full bg-transparent h-12">
-
+                            
                         </div>
-
+                        
                         <Messages v-if="channel_id !== 'undefined'" :messages="messages" :key="`${channel_id}-${message_key}`" :channel_id="channel_id" />
                     </div>
                     
@@ -28,7 +28,7 @@
                 
             </div>
             
-            <MemberList /> 
+            <MemberList :members="members" /> 
             
             
         </div>
@@ -61,6 +61,46 @@ const messageSend = async (message: string) => {
     })
     message_key.value++
 }
+
+const members = [
+{
+    "name": "Admin",
+    "members": [
+    {
+        "name": "raphiel",
+        "avatar": "https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240",
+        "owner": true
+    },
+    {
+        "name": "slayernominee",
+        "avatar": "https://picsum.photos/240",
+        "owner": false
+    }
+    ]
+},
+{
+    "name": "Online",
+    "members": [
+    {
+        "name": "mee5",
+        "avatar": "29271f9348f821ad2edd0a582523174b",
+        "id": "1115345432479019100",
+        "owner": false
+    },
+    {
+        "name": "another user",
+        "avatar": "https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240",
+        "owner": false
+    },
+    {
+        "name": "another user",
+        "avatar": "https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240",
+        "owner": false
+    }
+    ]
+}
+]
+
 </script>
 
 <style scoped>
