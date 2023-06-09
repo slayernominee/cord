@@ -18,7 +18,7 @@
                     <!-- search bar & co -->
 
                     
-                    <div class="w-full bg-red-300 h-[92.2vh]">
+                    <div class="w-full bg-black bg-opacity-25 h-[92.2vh]">
                         <!-- search bar & co -->
                         <!-- messages -->
                     </div>

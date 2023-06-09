@@ -4,6 +4,7 @@
 
 body {
     @apply bg-slate-900 text-slate-100;
+    background-image: url("https://media.discordapp.net/attachments/731641989627641897/997289663612059871/unknown.png?width=1711&height=963");
 }
 
 @layer components {
@@ -21,11 +22,16 @@ body {
         @apply text-center w-full flex justify-center py-3 cursor-pointer;
     }
     .channel, .memberListRoleName, .memberListMember {
-        @apply bg-black py-2 pl-4 cursor-pointer bg-opacity-100;
+        @apply bg-black py-2 pl-4 cursor-pointer;
+        @apply bg-opacity-25;
         @apply hover:bg-opacity-90 hover:bg-slate-800;
     }
     .memberListMember {
         @apply pl-7 flex;
+        @apply hover:text-opacity-90 hover:text-slate-200;
+    }
+    .channel {
+        @apply hover:text-opacity-90 hover:text-slate-200;
     }
     .memberListMemberAvatar {
         @apply rounded-full h-8 mr-4;

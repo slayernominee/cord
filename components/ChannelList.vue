@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-slate-200 w-64 h-[86.5vh] overflow-scroll">
+    <div class="bg-black bg-opacity-50 text-slate-300 text-opacity-70 w-64 h-[86.5vh] overflow-scroll">
         <NuxtLink to="/channel/123/1">
             <div class="channel">
                 # announcements
