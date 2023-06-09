@@ -10,7 +10,7 @@
                 <div class="h-full overflow-hidden">
                     <ServerInfo name="My Server" />
                     <ChannelList />
-                    <UserInfo username="raphiel" status="sleepy" />
+                    <UserInfo :username="user.username" status="sleepy" :avatar="user.avatar" :id="user.id" />
                     
                 </div>
                 
@@ -20,6 +20,7 @@
                     
                     <div class="w-full bg-black bg-opacity-25 h-[92.2vh]">
                         <!-- search bar & co -->
+                        {{ user }}
                         <!-- messages -->
                     </div>
                     
@@ -38,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-
+var user: any = await $fetch('/api/me');
 </script>
 
 <style scoped>

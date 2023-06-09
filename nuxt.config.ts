@@ -4,5 +4,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   css : [
     '@mdi/font/css/materialdesignicons.min.css'
- ],
+  ],
+  runtimeConfig: {
+    token: process.env.TOKEN
+  }
 })
