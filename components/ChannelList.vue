@@ -1,97 +1,19 @@
 <template>
     <div class="bg-black bg-opacity-50 text-slate-300 text-opacity-70 w-64 h-[86.5vh] overflow-scroll">
-        <NuxtLink to="/channel/123/1">
+        <NuxtLink v-for="channel in channels" :to="`/channel/${channel.guild_id}/${channel.id}`">
             <div class="channel">
-                # announcements
+                # {{ channel.name }}
             </div>
         </NuxtLink>
-        <div @click="$router.push('/channel/123/2')" class="channel">
-            # info
-        </div>
-        <div @click="$router.push('/channel/123/3')" class="channel">
-            # chat 1
-        </div>
-        <div class="channel">
-            # chat 2
-        </div>
-        <div class="channel">
-            # chat 3
-        </div>
-        <div class="channel">
-            # bot
-        </div>
-        <div class="channel">
-            # bump
-        </div>
-        <div class="channel">
-            # shit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
-        <div class="channel">
-            # chit chat
-        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
+const { server_id } = defineProps(['server_id'])
+const { channels } :any = await $fetch('/api/channel', {
+    method: 'POST',
+    body: {
+        server_id: server_id
+    }
+})
 </script>

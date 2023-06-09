@@ -9,7 +9,7 @@
             <div class="w-full h-[100vh] flex">
                 <div class="h-full overflow-hidden">
                     <ServerInfo name="My Server" />
-                    <ChannelList />
+                    <ChannelList :server_id="server_id" />
                     <UserInfo :username="user.username" status="sleepy" :avatar="user.avatar" :id="user.id" />
                     
                 </div>
@@ -20,7 +20,7 @@
                     
                     <div class="w-full bg-black bg-opacity-25 h-[92.2vh]">
                         <!-- search bar & co -->
-                        {{ test }}
+                        {{ server_id }}
                         <!-- messages -->
                     </div>
                     
@@ -39,6 +39,8 @@
 </template>
 
 <script setup lang="ts">
+const server_id = useRoute().params.server;
+
 var user: any = await $fetch('/api/me')
 
 var { guilds }: any = await $fetch('/api/server')

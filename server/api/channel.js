@@ -1,13 +1,14 @@
-import { REST } from '@discordjs/rest' 
+import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v10'
 
 const rest = new REST({ version: '10', makeRequest: fetch }).setToken(`${useRuntimeConfig().token}`)
 
 export default defineEventHandler(async (event) => {
-  
-    const guilds = await rest.get(Routes.userGuilds('@me'))
+    const { server_id } = await readBody(event)
 
+    const channels = await rest.get(Routes.guildChannels(server_id))
+    
     return {
-        guilds: guilds
+        channels: channels
     }
 })
