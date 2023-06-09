@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black bg-opacity-50 text-slate-300 text-opacity-70 w-64 h-full overflow-scroll">
+    <div class="bg-black bg-opacity-50 text-slate-300 text-opacity-70 w-64 h-full overflow-scroll pt-4">
         
         <div class="memberListRole" v-for="role in members">
             <div class="memberListRoleName">

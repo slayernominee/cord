@@ -1,10 +1,10 @@
 <template>
-    <div class="px-10 pt-4">
-        <div v-for="message in messages" class="message">
+    <div class="px-10 pt-4 overflow-y-scroll h-[85vh]">
+        <div v-for="message in messages.reverse()" class="message">
             <div class="flex">
-                <img class="messageAvatar" :src="message.user.avatar">
+                <img class="messageAvatar" :src="`https://cdn.discordapp.com/icons/1113941024302178416/f7371b2242a268657b388d7136718fc8.webp?size=240`">
                 <div class="flex">
-                    <p class="mr-4 text-blue-500">{{ message.user.username }}</p>
+                    <p class="mr-4 text-blue-500">{{ message.author.username }}</p>
                     <span class="text-xs pt-1 text-slate-500 text-opacity-80">Today at 3:23 PM</span>
                 </div>
             </div>
@@ -13,27 +13,13 @@
             </p>
         </div>
     </div>
+
 </template>
 
 <script setup lang="ts">
-const messages = [
-{
-    user: {
-        username: 'raphiel',
-        avatar: 'https://cdn.discordapp.com/avatars/800360309444313088/725589f83342b30e417b80404e6b4755.webp?size=160',
-    },
-    content: `Hey, how are you?
-    Nostrud do do ea amet ea ad amet anim minim consectetur esse voluptate magna. Mollit aliquip aliqua in mollit ea est in nisi pariatur pariatur cupidatat cupidatat minim cupidatat. Aliquip labore aliquip voluptate fugiat elit. Amet laboris Lorem ea amet.
-    `,
-},
-{
-    user: {
-        username: 'slayernominee',
-        avatar: 'https://picsum.photos/240',
-    },
-    content: "im fine :)"
-}
-]
+const channel_id = "1095792271032594614"
+
+const { messages } :any = await $fetch('/api/messages', { method: 'POST', body: { channel_id: channel_id } })
 </script>
 
 <style scoped>
