@@ -101,6 +101,11 @@ const members = [
 }
 ]
 
+const test :any = await $fetch('/api/members', { method: 'POST', body: { guild_id: server_id } })
+
+for (let t in test.members ) {
+    console.log(test.members[t])
+}
 
 </script>
 
