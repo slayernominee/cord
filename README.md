@@ -2,6 +2,8 @@
 
 An Discord like Front End for Bots (basically a bot client)
 
+**currently it is only a nice front end, im looking for a way to connect it to the discord api ...**
+
 ![Image](.github/showcase.png)
 
 ## Setup
